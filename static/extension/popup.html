@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AI Phishing Email Detector</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <span class="logo-icon">🛡️</span>
+      <span class="logo-text">AI THREAT SCANNER</span>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+      <!-- Input Mode -->
+      <div id="input-view">
+        <div class="info-badge" id="source-badge" style="display: none;">
+          Selected text loaded from browser page
+        </div>
+        <textarea id="email-text" placeholder="Paste email content or highlight text on a page..."></textarea>
+        <button id="scan-btn">ANALYZE CONTENT</button>
+      </div>
+
+      <!-- Loading Mode -->
+      <div id="loading-view" style="display: none;">
+        <div class="spinner"></div>
+        <p class="loading-text">RUNNING AI DIAGNOSTICS...</p>
+      </div>
+
+      <!-- Results Mode -->
+      <div id="result-view" style="display: none;">
+        <!-- Shield Alert -->
+        <div id="result-banner" class="result-banner">
+          <span id="result-shield">🛡️</span>
+          <div>
+            <div id="result-status" class="status-title">SAFE</div>
+            <div class="status-subtitle">Risk Score: <span id="result-risk">0</span>/100</div>
+          </div>
+        </div>
+
+        <!-- Explanation -->
+        <div class="section-title">DIAGNOSTIC ANALYSIS</div>
+        <div id="result-explanation" class="explanation-box"></div>
+
+        <!-- Indicators -->
+        <div class="section-title">THREAT KEYWORDS / INDICATORS</div>
+        <div id="result-indicators" class="indicators-list"></div>
+
+        <!-- Actions -->
+        <button id="reset-btn">SCAN NEW TEXT</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      ML Engine: <span class="status-online">ONLINE</span>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
